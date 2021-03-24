@@ -61,17 +61,22 @@ export function NewTransactionModal({
       <Container onSubmit={handleCreateNewTransaction}>
         <h2>Cadastrar transação</h2>
 
-        <input
-          placeholder="Título"
-          value={title}
-          onChange={(event) => setTitle(event.target.value)}
-        />
-        <input
-          type="number"
-          placeholder="Valor"
-          value={amount}
-          onChange={(event) => setAmount(Number(event.target.value))}
-        />
+        <label aria-label="title" >
+          <input
+            placeholder="Título"
+            value={title}
+            onChange={(event) => setTitle(event.target.value)}
+          />
+        </label>
+
+        <label aria-label="value" >
+          <input
+            type="number"
+            placeholder="Valor"
+            value={amount}
+            onChange={(event) => setAmount(Number(event.target.value))}
+          />
+        </label>
 
         <TransactionTypeContainer>
           <RadioBox
@@ -98,11 +103,13 @@ export function NewTransactionModal({
           </RadioBox>
         </TransactionTypeContainer>
 
-        <input
-          placeholder="Categoria"
-          value={category}
-          onChange={(event) => setCategory(event.target.value)}
-        />
+        <label aria-label="category">
+          <input
+            placeholder="Categoria"
+            value={category}
+            onChange={(event) => setCategory(event.target.value)}
+          />
+        </label>
         <button type="submit">Cadastrar</button>
       </Container>
     </Modal>

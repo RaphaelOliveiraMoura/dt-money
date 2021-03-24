@@ -23,8 +23,10 @@ export const Container = styled.form`
     &::placeholder {
       color: var(--text-body);
     }
+  }
 
-    & + input {
+  label + label {
+    input {
       margin-top: 1rem;
     }
   }
